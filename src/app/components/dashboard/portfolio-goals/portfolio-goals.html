@@ -1,0 +1,54 @@
+<div class="card h-full flex flex-col">
+    <div class="mb-4">
+        <h3>Portfolio goals</h3>
+    </div>
+
+    <div class="flex flex-col gap-6 flex-1 justify-around">
+        @for (goal of goals; track goal.label) {
+        <div>
+            <div class="text-xs text-muted mb-3 uppercase">{{ goal.label }}</div>
+
+            @if (goal.type === 'gradient') {
+            <div class="relative">
+                <div class="text-center mb-1" [style.margin-left.%]="(goal.marker ?? 0) - 2">
+                    <span class="text-xs font-bold text-white">{{ goal.marker }}%</span>
+                </div>
+
+                <div class="flex h-8 rounded-lg overflow-hidden relative">
+                    @for (color of goal.colors; track $index; let i = $index) {
+                    <div class="h-full" [ngClass]="color" [style.width.%]="goal.percentages?.[i] ?? 0">
+                    </div>
+                    }
+
+                    <div class="absolute top-0 bottom-0 w-0.5 bg-white" [style.left.%]="goal.marker ?? 0"></div>
+                </div>
+
+                <div class="text-xs mt-1 text-center" [ngClass]="goal.statusColor">
+                    {{ goal.statusText }}
+                </div>
+            </div>
+            }
+
+            @if (goal.type === 'progress') {
+            <div class="relative mb-8">
+                <div class="flex items-center gap-2">
+                    <div class="flex-1 h-8 rounded-full relative overflow-visible"
+                        style="background-color: rgba(255, 255, 255, 0.1)">
+                        <div class="h-full goal-gradient-blue flex items-center justify-start relative rounded-full"
+                            [style.width.%]="goal.progress ?? 0">
+                            <span class="text-white font-bold text-sm pl-3 whitespace-nowrap overflow-hidden">{{
+                                goal.current }}</span>
+                        </div>
+
+                        <div class="goal-percent-label" [style.left.%]="goal.progress ?? 0">
+                            {{ goal.progress }}%
+                        </div>
+                    </div>
+                    <span class="text-white font-medium text-base whitespace-nowrap">{{ goal.target }}</span>
+                </div>
+            </div>
+            }
+        </div>
+        }
+    </div>
+</div>

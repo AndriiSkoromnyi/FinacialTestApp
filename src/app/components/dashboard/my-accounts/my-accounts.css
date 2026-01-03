@@ -1,0 +1,239 @@
+.card {
+    background-color: var(--bg-card);
+    border-radius: 0.75rem;
+    padding: 1.5rem;
+    color: white;
+}
+
+
+.search-input-mini {
+    background: var(--bg-input);
+    border: 1px solid var(--border-light);
+    padding: 0.5rem 1rem;
+    border-radius: 999px;
+    color: white;
+    font-size: 0.875rem;
+    width: 300px;
+    outline: none;
+    transition: all 0.2s;
+}
+
+.search-input-mini:focus {
+    border-color: var(--primary);
+    background: var(--bg-input-focus);
+}
+
+.overflow-x-auto table {
+    border-collapse: separate;
+    border-spacing: 0;
+}
+
+.table-header {
+    background-color: var(--white-03);
+}
+
+.table-header th {
+    text-transform: uppercase;
+    font-size: 0.7rem;
+    color: var(--text-secondary);
+    font-weight: 600;
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+    padding-left: 0.75rem;
+    padding-right: 0.75rem;
+    letter-spacing: 0.05em;
+    border-bottom: none;
+    text-align: center;
+}
+
+.table-header th:first-child {
+    border-top-left-radius: 0.5rem;
+    border-bottom-left-radius: 0.5rem;
+    padding-left: 1.5rem;
+}
+
+.table-header th:last-child {
+    border-top-right-radius: 0.5rem;
+    border-bottom-right-radius: 0.5rem;
+    padding-right: 1.5rem;
+}
+
+tr.account-row {
+    border-bottom: 1px solid var(--border-color);
+    transition: background-color 0.2s;
+}
+
+tr.account-row:hover {
+    background-color: var(--white-02);
+}
+
+tr.account-row td {
+    padding: 1.25rem 0.75rem;
+    vertical-align: middle;
+    font-size: 0.875rem;
+    color: var(--text-primary-soft);
+    border-bottom: 1px solid var(--border-color);
+    text-align: center;
+}
+
+tr.account-row td:first-child {
+    padding-left: 1.5rem;
+    padding-right: 3rem;
+    text-align: left;
+}
+
+tr.account-row td:last-child {
+    padding-right: 1.5rem;
+}
+
+.badge {
+    padding: 2px 8px;
+    border-radius: 999px;
+    font-size: 0.75rem;
+    font-weight: 600;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.status-dot {
+    display: inline-block;
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    margin-right: 6px;
+}
+
+.text-xs {
+    font-size: 0.75rem;
+}
+
+.text-muted {
+    color: var(--text-muted);
+}
+
+.font-bold {
+    font-weight: 700;
+}
+
+.font-medium {
+    font-weight: 500;
+}
+
+.text-blue-400 {
+    color: var(--primary-light);
+}
+
+.btn-secondary {
+    background: transparent;
+    border: 1px solid var(--border-light);
+    color: var(--text-secondary);
+    border-radius: 999px;
+    transition: all 0.2s;
+}
+
+.btn-secondary:hover {
+    border-color: var(--text-muted);
+    color: white;
+}
+
+.winnability-pill {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    border: 1px solid var(--primary-alpha-40);
+    background: var(--primary-alpha-10);
+    border-radius: 999px;
+    padding: 2px 8px;
+    width: fit-content;
+    margin: 0 auto;
+}
+
+.dots-container {
+    display: flex;
+    gap: 2px;
+}
+
+.dot {
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background-color: var(--primary-light);
+}
+
+.dot.inactive {
+    opacity: 0.3;
+}
+
+.premium-cell {
+    color: var(--primary-lighter) !important;
+    font-weight: 700;
+    font-size: 0.875rem;
+}
+
+.appetite-badge {
+    padding: 3px 12px;
+    border-radius: 999px;
+    font-size: 0.7rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    letter-spacing: 0.02em;
+}
+
+.appetite-high {
+    background-color: var(--primary-dark);
+    color: var(--primary-lighter);
+}
+
+.appetite-medium {
+    background-color: var(--bg-hover);
+    color: var(--text-secondary);
+}
+
+.appetite-cautious {
+    background-color: var(--border-color);
+    color: var(--text-muted);
+}
+
+.triage-badge {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 3px 10px;
+    border-radius: 999px;
+    border: 1px solid var(--primary-light);
+    background: var(--primary-alpha-10);
+    color: var(--primary-lighter);
+    font-size: 0.75rem;
+    font-weight: 600;
+}
+
+.loss-badge {
+    padding: 3px 10px;
+    border-radius: 999px;
+    font-size: 0.75rem;
+    font-weight: 600;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    color: white !important;
+    border: 1px solid;
+}
+
+.loss-good {
+    background-color: var(--success);
+    border-color: var(--success-dark);
+}
+
+.loss-warning {
+    background-color: var(--warning);
+    border-color: var(--warning-dark);
+}
+
+.loss-danger {
+    background-color: var(--danger);
+    border-color: var(--danger-dark);
+}

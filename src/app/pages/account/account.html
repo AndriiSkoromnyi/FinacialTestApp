@@ -1,0 +1,17 @@
+<div class="container py-6" *ngIf="accountData.name">
+    <app-account-header [data]="accountData"></app-account-header>
+
+    <app-performance-metrics [data]="accountData.metrics"></app-performance-metrics>
+
+    <app-policies-widget [data]="accountData.policies"></app-policies-widget>
+
+    <app-account-status></app-account-status>
+
+    <app-winnability-widget [data]="accountData.winnabilityDetails"></app-winnability-widget>
+
+    <div class="mt-8">
+        <app-communication-widget [data]="accountData.communication"></app-communication-widget>
+    </div>
+
+    <app-policies-table></app-policies-table>
+</div>

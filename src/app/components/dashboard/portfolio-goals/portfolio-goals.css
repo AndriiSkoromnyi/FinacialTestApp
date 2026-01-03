@@ -1,0 +1,108 @@
+.card {
+    background-color: var(--bg-card);
+    border-radius: 0.75rem;
+    padding: 1.5rem;
+    color: white;
+}
+
+h3 {
+    font-size: 1.125rem;
+    font-weight: 600;
+    margin: 0;
+}
+
+.bg-green-500 {
+    background-color: var(--success);
+}
+
+.bg-yellow-500 {
+    background-color: var(--warning);
+}
+
+.bg-red-500 {
+    background-color: var(--danger);
+}
+
+.bg-blue-500 {
+    background-color: var(--primary-light);
+}
+
+.h-8 {
+    height: 2rem !important;
+}
+
+.h-2 {
+    height: 0.5rem !important;
+}
+
+.h-full {
+    height: 100% !important;
+}
+
+.flex-1 {
+    flex: 1 1 0%;
+}
+
+.justify-around {
+    justify-content: space-around;
+}
+
+.overflow-hidden {
+    overflow: hidden;
+}
+
+.rounded-lg {
+    border-radius: 0.5rem;
+}
+
+.rounded-full {
+    border-radius: 9999px;
+}
+
+.bg-green-500 {
+    background-color: var(--success) !important;
+}
+
+.bg-yellow-500 {
+    background-color: var(--warning) !important;
+}
+
+.bg-yellow-400 {
+    background-color: var(--warning-light) !important;
+}
+
+.bg-red-500 {
+    background-color: var(--danger) !important;
+}
+
+.bg-blue-500 {
+    background-color: var(--primary-light) !important;
+}
+
+.bg-blue-600 {
+    background-color: var(--primary) !important;
+}
+
+.goal-gradient-blue {
+    background: linear-gradient(90deg, var(--primary-light) 0%, var(--primary-lighter) 100%) !important;
+}
+
+.goal-percent-label {
+    position: absolute;
+    top: 100%;
+    margin-top: 0.25rem;
+    transform: translateX(-50%);
+    font-size: 0.75rem;
+    font-weight: 500;
+    color: var(--text-secondary);
+    z-index: 20;
+    white-space: nowrap;
+}
+
+.relative {
+    position: relative !important;
+}
+
+.overflow-visible {
+    overflow: visible !important;
+}

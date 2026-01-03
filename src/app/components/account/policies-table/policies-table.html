@@ -1,0 +1,61 @@
+<div class="card mt-8">
+    <div class="flex items-center justify-between mb-4">
+        <h3>Policies</h3>
+        <div class="flex gap-2">
+            <input type="text" placeholder="Search"
+                class="bg-gray-800 borderborder-gray-700 rounded px-2 py-1 text-xs text-white">
+            <button class="btn btn-secondary text-xs">Filter</button>
+            <button class="btn btn-secondary text-xs">Group</button>
+        </div>
+    </div>
+
+    <div class="overflow-x-auto">
+        <table class="w-full text-left">
+            <thead>
+                <tr class="text-xs text-muted uppercase border-b border-gray-800">
+                    <th class="py-2">Line</th>
+                    <th>Eff Date</th>
+                    <th>Exp Date</th>
+                    <th>Status</th>
+                    <th>Est Premium</th>
+                    <th>Undr Premium</th>
+                    <th>Annual Prem</th>
+                    <th>Renewal Prem</th>
+                    <th>Rate Change</th>
+                    <th>Loss Ratio</th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody class="text-sm">
+                <tr *ngFor="let item of tableData" class="border-b border-gray-800 hover:bg-white/5">
+                    <td class="py-3 flex items-center gap-2">
+                        <span class="w-2 h-2 rounded-full"
+                            [ngClass]="{'bg-blue-500': item.line.includes('Marine'), 'bg-green-500': item.line.includes('Liability'), 'bg-purple-500': item.line.includes('Work'), 'bg-red-500': item.line.includes('Umbrella')}"></span>
+                        {{ item.line }}
+                    </td>
+                    <td>{{ item.eff }}</td>
+                    <td>{{ item.exp }}</td>
+                    <td>
+                        <span class="status-dot"
+                            [ngClass]="{'bg-green-500': item.status === 'Active', 'bg-yellow-500': item.status === 'Pending'}"></span>
+                        {{ item.status }}
+                    </td>
+                    <td>${{ item.est | number }}</td>
+                    <td>${{ item.und | number }}</td>
+                    <td>${{ item.renewal | number }}</td> <!-- Placeholder mapping -->
+                    <td>${{ item.renewal | number }}</td>
+                    <td [class.text-red-400]="item.change > 0" [class.text-green-400]="item.change < 0">{{ item.change
+                        }}%</td>
+                    <td>
+                        <span class="badge"
+                            [ngClass]="{'bg-green-500/20 text-green-400': item.loss < 40, 'bg-red-500/20 text-red-400': item.loss >= 40}">{{
+                            item.loss }}%</span>
+                    </td>
+                    <td>
+                        <button class="btn-icon">⋮</button>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

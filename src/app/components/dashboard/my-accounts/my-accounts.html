@@ -1,0 +1,90 @@
+<div class="card">
+    <div class="flex items-center justify-between mb-6">
+        <div class="flex items-center gap-4">
+            <h2>My accounts</h2>
+            <input type="text" placeholder="Search" class="search-input-mini">
+        </div>
+        <div class="flex items-center gap-2">
+            <button class="btn btn-secondary text-xs rounded-full px-4 py-1.5">Filter</button>
+            <button class="btn btn-secondary text-xs rounded-full px-4 py-1.5">Sort</button>
+            <button class="btn btn-secondary text-xs rounded-full px-4 py-1.5">Group</button>
+            <button class="btn btn-primary text-xs flex items-center gap-1 rounded-full px-4 py-1.5">
+                <span>+</span> New
+            </button>
+        </div>
+    </div>
+
+    <div class="overflow-x-auto">
+        <table class="w-full" style="border-collapse: collapse;">
+            <thead>
+                <tr class="table-header">
+                    <th>Account Name/Type</th>
+                    <th>Line</th>
+                    <th>Broker</th>
+                    <th>Renewal Date</th>
+                    <th>Premium</th>
+                    <th>Rated Premium</th>
+                    <th>Loss Ratio</th>
+                    <th>Appetite</th>
+                    <th>Status</th>
+                    <th>Triage</th>
+                    <th>Winnability</th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody>
+                @for (item of data; track item) {
+                <tr class="account-row">
+                    <td>
+                        <div class="font-medium text-white">{{ item.name }}</div>
+                        <div class="text-xs text-muted">Mid-Market</div>
+                    </td>
+                    <td>{{ item.line }}</td>
+                    <td>{{ item.broker }}</td>
+                    <td>{{ item.renewal }}</td>
+                    <td class="premium-cell text-blue-400">${{ item.premium }}M</td>
+                    <td>${{ item.rated }}M</td>
+                    <td>
+                        <span class="loss-badge"
+                            [ngClass]="{'loss-good': item.lossRatio < 35, 'loss-warning': item.lossRatio >= 35 && item.lossRatio < 60, 'loss-danger': item.lossRatio >= 60}">
+                            {{ item.lossRatio }}%
+                        </span>
+                    </td>
+                    <td class="text-center">
+                        <span class="appetite-badge"
+                            [ngClass]="{'appetite-high': item.appetite === 'HIGH', 'appetite-medium': item.appetite === 'MEDIUM', 'appetite-cautious': item.appetite === 'CAUTIOUS'}">
+                            {{ item.appetite }}
+                        </span>
+                    </td>
+                    <td>
+                        <div class="flex items-center justify-center gap-2">
+                            <span class="status-dot"
+                                [ngClass]="{'bg-green-500': item.status === 'Active', 'bg-blue-500': item.status === 'Under review'}"></span>
+                            {{ item.status }}
+                        </div>
+                    </td>
+                    <td>
+                        <span class="triage-badge">{{ item.triage
+                            }}</span>
+                    </td>
+                    <td>
+                        <div class="winnability-pill">
+                            <div class="dots-container">
+                                <span class="dot"></span>
+                                <span class="dot"></span>
+                                <span class="dot" [class.inactive]="item.winnability !== 'Very Strong'"></span>
+                                <span class="dot"
+                                    [class.inactive]="item.winnability !== 'Very Strong' && item.winnability !== 'Strong'"></span>
+                            </div>
+                            <span class="text-xs text-blue-400 font-medium">{{ item.winnability }}</span>
+                        </div>
+                    </td>
+                    <td>
+                        <button class="btn-icon">⋮</button>
+                    </td>
+                </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+</div>

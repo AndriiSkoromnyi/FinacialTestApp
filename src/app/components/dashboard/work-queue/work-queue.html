@@ -1,0 +1,61 @@
+<div class="card widget h-full">
+    <div class="widget-header">
+        <h2>Work Queue</h2>
+    </div>
+
+    <div class="tabs flex gap-2 mb-6">
+        @for (tab of tabs; track tab.id) {
+        <button class="tab-btn text-sm font-medium" [class.active]="activeTab === tab.id" (click)="activeTab = tab.id">
+            <span [class.text-white]="activeTab === tab.id" [class.text-muted]="activeTab !== tab.id">
+                {{ tab.label }}
+            </span>
+            <span class="badge ml-2" [class.badge-active]="activeTab === tab.id">({{ tab.count }})</span>
+        </button>
+        }
+    </div>
+
+    <div class="table-container">
+        <table>
+            <thead>
+                <tr>
+                    <th>Originator</th>
+                    <th>Client/Line</th>
+                    <th>Type</th>
+                    <th>Status</th>
+                    <th>Created</th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody>
+                @for (item of data; track item) {
+                <tr>
+                    <td>
+                        <div class="flex items-center gap-2">
+                            <div class="avatar-sm">{{ (item.originator || '').substring(0, 2).toUpperCase() }}</div>
+                            <span>{{ item.originator }}</span>
+                        </div>
+                    </td>
+                    <td>
+                        <div class="flex flex-col">
+                            <span class="font-medium text-white">{{ item.client }}</span>
+                            <span class="text-xs text-muted">Cyber Liability</span>
+                        </div>
+                    </td>
+                    <td>{{ item.type }}</td>
+                    <td>
+                        <div class="flex items-center">
+                            <span class="status-dot"
+                                [ngClass]="{'bg-blue-500': item.status === 'New', 'bg-yellow-500': item.status.includes('Pending'), 'bg-green-500': item.status === 'Completed'}"></span>
+                            <span>{{ item.status }}</span>
+                        </div>
+                    </td>
+                    <td>{{ item.created }}</td>
+                    <td>
+                        <button class="btn-icon">⋮</button>
+                    </td>
+                </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+</div>

@@ -1,0 +1,21 @@
+<div class="container" style="padding-top: 1.5rem; padding-bottom: 1.5rem;" *ngIf="data">
+    <div class="dashboard-top-section full-height">
+
+        <div class="full-height">
+            <app-work-queue [data]="data.workQueue" class="block full-height"></app-work-queue>
+        </div>
+
+        <div class="dashboard-widgets-wrapper full-height">
+            <div class="full-height">
+                <app-portfolio-goals [data]="data.portfolioGoals" class="block full-height"></app-portfolio-goals>
+            </div>
+
+            <div class="dashboard-widgets-stack">
+                <app-quick-actions></app-quick-actions>
+                <app-market-intelligence [data]="data.marketIntelligence" class="flex-1"></app-market-intelligence>
+            </div>
+        </div>
+    </div>
+
+    <app-my-accounts [data]="data.myAccounts"></app-my-accounts>
+</div>
