@@ -1,37 +1,30 @@
-import { Component, OnInit, inject } from '@angular/core';
+
+import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { MockDataService } from '../../services/mock-data.service';
 import { AccountHeaderComponent } from '../../components/account/account-header/account-header';
 import { PerformanceMetricsComponent } from '../../components/account/performance-metrics/performance-metrics';
-import { PoliciesWidgetComponent } from '../../components/account/policies-widget/policies-widget';
+import { PoliciesSummaryComponent } from '../../components/account/policies-summary/policies-summary';
 import { AccountStatusComponent } from '../../components/account/account-status/account-status';
-import { WinnabilityWidgetComponent } from '../../components/account/winnability-widget/winnability-widget';
-import { CommunicationWidgetComponent } from '../../components/account/communication-widget/communication-widget';
+import { ComplianceDocsComponent } from '../../components/account/compliance-docs/compliance-docs';
+import { AccountDetailsComponent } from '../../components/account/account-details/account-details';
+import { CommunicationComponent } from '../../components/account/communication/communication';
 import { PoliciesTableComponent } from '../../components/account/policies-table/policies-table';
 
 @Component({
-  selector: 'app-account-page',
-  standalone: true,
-  imports: [
-    CommonModule,
-    AccountHeaderComponent,
-    PerformanceMetricsComponent,
-    PoliciesWidgetComponent,
-    AccountStatusComponent,
-    WinnabilityWidgetComponent,
-    CommunicationWidgetComponent,
-    PoliciesTableComponent
-  ],
-  templateUrl: './account.html',
-  styleUrl: './account.css',
+    selector: 'app-account-page',
+    standalone: true,
+    imports: [
+        CommonModule,
+        AccountHeaderComponent,
+        PerformanceMetricsComponent,
+        PoliciesSummaryComponent,
+        AccountStatusComponent,
+        ComplianceDocsComponent,
+        AccountDetailsComponent,
+        CommunicationComponent,
+        PoliciesTableComponent
+    ],
+    templateUrl: 'account.html',
+    styleUrls: ['account.css']
 })
-export class AccountComponent implements OnInit {
-  dataService = inject(MockDataService);
-  accountData: any = {};
-
-  ngOnInit() {
-    this.dataService.getAccountData().subscribe(res => {
-      this.accountData = res;
-    });
-  }
-}
+export class AccountPage { }

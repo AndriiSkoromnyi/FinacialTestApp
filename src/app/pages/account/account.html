@@ -1,17 +1,25 @@
-<div class="container py-6" *ngIf="accountData.name">
-    <app-account-header [data]="accountData"></app-account-header>
+<div class="account-container">
+    <!-- Header Section -->
+    <app-account-header></app-account-header>
 
-    <app-performance-metrics [data]="accountData.metrics"></app-performance-metrics>
+    <!-- Performance Metrics -->
+    <app-performance-metrics></app-performance-metrics>
 
-    <app-policies-widget [data]="accountData.policies"></app-policies-widget>
+    <!-- Policies Summary -->
+    <app-policies-summary></app-policies-summary>
 
-    <app-account-status></app-account-status>
-
-    <app-winnability-widget [data]="accountData.winnabilityDetails"></app-winnability-widget>
-
-    <div class="mt-8">
-        <app-communication-widget [data]="accountData.communication"></app-communication-widget>
+    <!-- Mid Section: Status & Docs -->
+    <div class="status-doc-grid">
+        <app-account-status class="status-comp"></app-account-status>
+        <app-compliance-docs class="docs-comp"></app-compliance-docs>
     </div>
 
+    <!-- Account Details (Winnability) -->
+    <app-account-details></app-account-details>
+
+    <!-- Communication -->
+    <app-communication></app-communication>
+
+    <!-- Policies Table -->
     <app-policies-table></app-policies-table>
 </div>

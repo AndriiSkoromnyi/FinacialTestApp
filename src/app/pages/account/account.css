@@ -1,0 +1,24 @@
+:host {
+    display: block;
+    /* Removed fixed height and overflow to let it scroll naturally */
+}
+
+.account-container {
+    /* Container is already handled by main.container in app.html but we can keep some padding if needed */
+    padding-bottom: 4rem;
+}
+
+.status-doc-grid {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: 1.5rem;
+    align-items: flex-start;
+}
+
+.status-comp {
+    width: 100%;
+}
+
+.docs-comp {
+    width: 100%;
+}

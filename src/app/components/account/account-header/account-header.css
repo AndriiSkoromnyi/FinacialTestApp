@@ -1,0 +1,125 @@
+:host {
+    display: block;
+    width: 100%;
+}
+
+.account-header-card {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    padding: 1.5rem 0;
+    position: relative;
+    /* Removed background/border as requested */
+}
+
+.header-content {
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+}
+
+.logo-circle {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, #1e293b, #0f172a);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 2px solid rgba(255, 255, 255, 0.2);
+    overflow: hidden;
+}
+
+.logo-text {
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: rgba(255, 255, 255, 0.8);
+}
+
+.company-info h1 {
+    font-size: 1.8rem;
+    margin: 0 0 0.5rem 0;
+    font-weight: 600;
+    letter-spacing: -0.02em;
+}
+
+.details-row {
+    display: flex;
+    gap: 1rem;
+    align-items: center;
+    font-size: 0.85rem;
+    color: #94a3b8;
+}
+
+.divider {
+    width: 1px;
+    height: 24px;
+    background: rgba(255, 255, 255, 0.1);
+}
+
+.label {
+    display: block;
+    font-size: 0.7rem;
+    text-transform: uppercase;
+    color: #64748b;
+    margin-bottom: 2px;
+    letter-spacing: 0.05em;
+}
+
+.value {
+    color: #e2e8f0;
+    font-weight: 500;
+}
+
+.alert-box {
+    display: flex;
+    gap: 1rem;
+    padding: 1rem 1.5rem;
+    border-radius: 12px;
+    border: 1px solid rgba(234, 179, 8, 0.3);
+    background: rgba(234, 179, 8, 0.05);
+    min-width: 450px;
+}
+
+.alert-icon {
+    font-size: 1.25rem;
+}
+
+.alert-title {
+    color: #fbbf24;
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+    font-size: 0.95rem;
+}
+
+.alert-items {
+    display: flex;
+    gap: 2rem;
+}
+
+.alert-item {
+    display: flex;
+    flex-direction: column;
+    font-size: 0.8rem;
+}
+
+.alert-item span:first-child {
+    color: #e2e8f0;
+    margin-bottom: 2px;
+}
+
+.sub {
+    font-size: 0.7rem;
+    color: #94a3b8;
+    margin-bottom: 4px;
+}
+
+.alert-item a {
+    color: #3b82f6;
+    text-decoration: none;
+    font-size: 0.75rem;
+}
+
+.alert-item a:hover {
+    text-decoration: underline;
+}

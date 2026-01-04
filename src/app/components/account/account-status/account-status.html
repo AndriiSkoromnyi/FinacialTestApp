@@ -1,0 +1,12 @@
+<h2 class="section-title">Account Status</h2>
+<div class="status-card">
+    <div class="stepper-track"></div>
+    <div class="step" *ngFor="let s of steps; let i = index" [class.active]="s.active" [class.completed]="s.completed">
+        <div class="step-icon">
+            <span *ngIf="s.completed">✓</span>
+            <span *ngIf="!s.completed && !s.active" class="dot"></span>
+            <span *ngIf="s.active" class="active-dot"></span>
+        </div>
+        <div class="step-label">{{s.label}}</div>
+    </div>
+</div>

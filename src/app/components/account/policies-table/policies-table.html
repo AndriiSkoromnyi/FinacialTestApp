@@ -1,61 +1,72 @@
-<div class="card mt-8">
-    <div class="flex items-center justify-between mb-4">
-        <h3>Policies</h3>
-        <div class="flex gap-2">
-            <input type="text" placeholder="Search"
-                class="bg-gray-800 borderborder-gray-700 rounded px-2 py-1 text-xs text-white">
-            <button class="btn btn-secondary text-xs">Filter</button>
-            <button class="btn btn-secondary text-xs">Group</button>
+<h2 class="section-title">Policies</h2>
+<div class="table-container">
+    <!-- Filter Bar -->
+    <div class="filter-bar">
+        <div class="search-input">
+            <i class="pi pi-search"></i>
+            <input type="text" placeholder="Search..." />
+        </div>
+        <div class="filter-buttons">
+            <button class="filter-btn active">Filter</button>
+            <button class="filter-btn">Group</button>
         </div>
     </div>
 
-    <div class="overflow-x-auto">
-        <table class="w-full text-left">
-            <thead>
-                <tr class="text-xs text-muted uppercase border-b border-gray-800">
-                    <th class="py-2">Line</th>
-                    <th>Eff Date</th>
-                    <th>Exp Date</th>
-                    <th>Status</th>
-                    <th>Est Premium</th>
-                    <th>Undr Premium</th>
-                    <th>Annual Prem</th>
-                    <th>Renewal Prem</th>
-                    <th>Rate Change</th>
-                    <th>Loss Ratio</th>
-                    <th></th>
-                </tr>
-            </thead>
-            <tbody class="text-sm">
-                <tr *ngFor="let item of tableData" class="border-b border-gray-800 hover:bg-white/5">
-                    <td class="py-3 flex items-center gap-2">
-                        <span class="w-2 h-2 rounded-full"
-                            [ngClass]="{'bg-blue-500': item.line.includes('Marine'), 'bg-green-500': item.line.includes('Liability'), 'bg-purple-500': item.line.includes('Work'), 'bg-red-500': item.line.includes('Umbrella')}"></span>
-                        {{ item.line }}
-                    </td>
-                    <td>{{ item.eff }}</td>
-                    <td>{{ item.exp }}</td>
-                    <td>
-                        <span class="status-dot"
-                            [ngClass]="{'bg-green-500': item.status === 'Active', 'bg-yellow-500': item.status === 'Pending'}"></span>
-                        {{ item.status }}
-                    </td>
-                    <td>${{ item.est | number }}</td>
-                    <td>${{ item.und | number }}</td>
-                    <td>${{ item.renewal | number }}</td> <!-- Placeholder mapping -->
-                    <td>${{ item.renewal | number }}</td>
-                    <td [class.text-red-400]="item.change > 0" [class.text-green-400]="item.change < 0">{{ item.change
-                        }}%</td>
-                    <td>
-                        <span class="badge"
-                            [ngClass]="{'bg-green-500/20 text-green-400': item.loss < 40, 'bg-red-500/20 text-red-400': item.loss >= 40}">{{
-                            item.loss }}%</span>
-                    </td>
-                    <td>
-                        <button class="btn-icon">⋮</button>
-                    </td>
-                </tr>
-            </tbody>
-        </table>
-    </div>
+    <table class="policy-table">
+        <thead>
+            <tr>
+                <th>TYPE</th>
+                <th>EFF DATE</th>
+                <th>EXP DATE</th>
+                <th>STATUS</th>
+                <th>GROSS PREM</th>
+                <th>COMMISSION</th>
+                <th>TAXES</th>
+                <th>FEES</th>
+                <th>NET PREMIUM</th>
+                <th>RATE CHANGE</th>
+                <th>LOSS RATIO</th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let row of rows">
+                <td>
+                    <div class="pol-type">
+                        <span class="dot" [ngClass]="row.color"></span> {{row.type}}
+                        <div class="pol-sub">{{row.id}}</div>
+                    </div>
+                </td>
+                <td>{{row.effDate}}</td>
+                <td>{{row.expDate}}</td>
+                <td><span class="status-pill {{row.status}}">{{row.status}}</span></td>
+                <td>{{row.gross}}</td>
+                <td>{{row.comm}}</td>
+                <td>{{row.taxes}}</td>
+                <td>{{row.fees}}</td>
+                <td>{{row.net}}</td>
+                <td [class.negative]="row.rateChange.startsWith('-')"
+                    [class.positive]="!row.rateChange.startsWith('-') && row.rateChange !== 'N/A'">{{row.rateChange}}
+                </td>
+                <td> <span class="loss-pill" [ngClass]="row.lossClass">{{row.loss}}</span> </td>
+                <td><i class="pi pi-ellipsis-h action-icon"></i></td>
+            </tr>
+        </tbody>
+        <tfoot>
+            <tr class="total-row">
+                <td>TOTAL (4)</td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td>$992,900</td>
+                <td>$1,020,010</td>
+                <td>$322,300</td>
+                <td>$1,137,600</td>
+                <td>$1,150,000</td>
+                <td>4.8%</td>
+                <td><span class="loss-pill yellow">18.5%</span></td>
+                <td></td>
+            </tr>
+        </tfoot>
+    </table>
 </div>
