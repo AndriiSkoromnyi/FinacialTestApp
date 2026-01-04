@@ -1,0 +1,142 @@
+/* ==========================================================================
+   Global UI Components (Cards, Buttons, Tables, Badges)
+   ========================================================================== */
+
+/* Cards */
+.card {
+    background-color: var(--bg-card);
+    border-radius: var(--radius-lg);
+    padding: var(--spacing-lg);
+    border: 1px solid var(--white-05);
+}
+
+/* Buttons */
+.btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0.5rem 1rem;
+    border-radius: var(--radius-full);
+    font-weight: 500;
+    border: none;
+    cursor: pointer;
+    transition: all 0.2s;
+    font-size: 0.875rem;
+}
+
+.btn-primary {
+    background-color: var(--primary);
+    color: white;
+}
+
+.btn-primary:hover {
+    background-color: var(--primary-hover);
+}
+
+.btn-secondary {
+    background-color: var(--white-10);
+    color: white;
+}
+
+.btn-secondary:hover {
+    background-color: var(--white-15);
+}
+
+.btn-icon {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    border: 1px solid var(--white-10);
+    background: transparent;
+    color: var(--text-muted);
+    cursor: pointer;
+    transition: all 0.2s ease;
+    font-size: 1.25rem;
+    padding: 0;
+    line-height: 1;
+}
+
+.btn-icon:hover {
+    background-color: var(--white-10);
+    color: var(--text-primary);
+    border-color: var(--white-30);
+}
+
+/* Tables */
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+th {
+    text-align: left;
+    padding: var(--spacing-sm);
+    color: var(--text-secondary);
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    border-bottom: 1px solid var(--border-color);
+}
+
+td {
+    padding: var(--spacing-sm);
+    border-bottom: 1px solid var(--white-05);
+    font-size: 0.875rem;
+}
+
+/* Status Badges */
+.status-badge {
+    padding: 2px 8px;
+    border-radius: 12px;
+    font-size: 0.7rem;
+    font-weight: 600;
+}
+
+.status-new {
+    background: var(--primary-alpha-20);
+    color: var(--primary-lighter);
+}
+
+.status-completed {
+    background: var(--success-alpha-20);
+    color: var(--success-light);
+}
+
+.status-pending {
+    background: var(--warning-alpha-20);
+    color: var(--warning-text);
+}
+
+
+/* Mobile Overrides for Components */
+@media (max-width: 768px) {
+    .card {
+        padding: 1.25rem;
+    }
+
+    .btn {
+        padding: 0.75rem 1.5rem;
+        font-size: 1rem;
+        min-height: 44px;
+    }
+
+    .btn-icon {
+        width: 44px;
+        height: 44px;
+        font-size: 1.5rem;
+    }
+
+    th,
+    td {
+        padding: 1rem 0.5rem;
+    }
+
+    .table-container,
+    .overflow-x-auto {
+        overflow-x: auto;
+        -webkit-overflow-scrolling: touch;
+    }
+}
