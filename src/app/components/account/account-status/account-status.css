@@ -25,8 +25,8 @@
     position: absolute;
     top: 2.75rem;
     /* center align with icon */
-    left: 4rem;
-    right: 4rem;
+    left: 5.5rem;
+    right: 5.5rem;
     height: 2px;
     background: #334155;
     z-index: 0;
@@ -50,6 +50,8 @@
     flex-direction: column;
     align-items: center;
     gap: 0.75rem;
+    width: 80px;
+    flex-shrink: 0;
 }
 
 .step-icon {
