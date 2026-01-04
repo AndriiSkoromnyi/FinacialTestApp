@@ -16,18 +16,26 @@
     border-radius: 16px;
     padding: 1.5rem;
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+    overflow: visible;
 }
 
 .filter-bar {
     display: flex;
     justify-content: space-between;
-    margin-bottom: 1rem;
+    align-items: center;
+    margin-bottom: 0;
+    padding-bottom: 1rem;
+    position: sticky;
+    top: 0;
+    z-index: 40;
+    background: transparent;
+    border-radius: 16px;
 }
 
 .search-input {
     background: var(--white-05);
     border-radius: 8px;
-    padding: 0.5rem 1rem;
+    padding: 0.4rem 0.8rem;
     display: flex;
     align-items: center;
     gap: 0.5rem;
@@ -60,7 +68,8 @@
 
 .policy-table {
     width: 100%;
-    border-collapse: collapse;
+    border-collapse: separate;
+    border-spacing: 0;
     font-size: 0.8rem;
 }
 
@@ -71,6 +80,11 @@ th {
     text-transform: uppercase;
     padding: 1rem 0.5rem;
     border-bottom: 1px solid var(--white-05);
+    position: sticky;
+    top: 72px;
+    z-index: 30;
+    background: transparent;
+    box-shadow: 0 1px 0 var(--white-05);
 }
 
 td {
@@ -187,9 +201,96 @@ td {
 
 .total-row {
     font-weight: 600;
-    background: rgba(255, 255, 255, 0.02);
 }
 
 .total-row td {
     border-bottom: none;
+    background: rgba(255, 255, 255, 0.02);
+}
+
+.total-row td:first-child {
+    border-top-left-radius: 12px;
+    border-bottom-left-radius: 12px;
+}
+
+.total-row td:last-child {
+    border-top-right-radius: 12px;
+    border-bottom-right-radius: 12px;
+}
+
+@media (max-width: 768px) {
+    .filter-bar {
+        flex-direction: column;
+        align-items: stretch;
+        gap: 1rem;
+        position: sticky;
+        top: 0;
+        z-index: 50;
+        background: #151925;
+        margin: 0 -1rem;
+        padding: 1rem;
+        border-top-left-radius: 16px;
+        border-top-right-radius: 16px;
+    }
+
+    .table-container {
+        padding: 1rem;
+        padding-top: 0;
+        overflow: visible;
+        background: #151925;
+        border-radius: 16px;
+    }
+
+    .table-scroll-wrapper {
+        overflow-x: auto;
+        -webkit-overflow-scrolling: touch;
+        margin: 0 -1rem;
+        padding: 0 1rem;
+    }
+
+    .search-input {
+        width: 100%;
+        max-width: none;
+        box-sizing: border-box;
+    }
+
+    .search-input input {
+        font-size: 1rem;
+    }
+
+    .filter-buttons {
+        width: 100%;
+        overflow-x: auto;
+        padding-bottom: 0.5rem;
+        -webkit-overflow-scrolling: touch;
+        scrollbar-width: none;
+    }
+
+    .filter-buttons::-webkit-scrollbar {
+        display: none;
+    }
+
+    .filter-btn {
+        flex-shrink: 0;
+    }
+
+    th,
+    td {
+        padding: 1rem 0.75rem;
+        font-size: 1rem;
+    }
+
+    th {
+        top: auto;
+        position: static;
+    }
+
+    .pol-sub {
+        font-size: 0.75rem;
+    }
+
+    .loss-pill,
+    .status-pill {
+        font-size: 0.85rem;
+    }
 }

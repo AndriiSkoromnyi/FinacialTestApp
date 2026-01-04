@@ -237,3 +237,44 @@ tr.account-row td:last-child {
     background-color: var(--danger);
     border-color: var(--danger-dark);
 }
+
+@media (max-width: 768px) {
+    .search-input-mini {
+        width: 100%;
+        padding: 0.75rem 1.25rem;
+        font-size: 1rem;
+        height: 48px;
+    }
+
+    .overflow-x-auto {
+        margin-left: -1.5rem;
+        margin-right: -1.5rem;
+        padding-left: 1.5rem;
+        padding-right: 1.5rem;
+        -webkit-overflow-scrolling: touch;
+    }
+
+    tr.account-row td {
+        padding: 1.5rem 1rem;
+        font-size: 1rem;
+    }
+
+    .badge,
+    .appetite-badge,
+    .triage-badge,
+    .loss-badge {
+        font-size: 0.85rem;
+        padding: 4px 10px;
+    }
+
+    .status-dot {
+        width: 10px;
+        height: 10px;
+        min-width: 10px;
+        min-height: 10px;
+    }
+
+    .premium-cell {
+        font-size: 1rem;
+    }
+}

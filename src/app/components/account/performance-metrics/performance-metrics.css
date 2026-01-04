@@ -121,3 +121,18 @@
     min-width: 110px;
     text-align: right;
 }
+
+@media (max-width: 768px) {
+    .metrics-grid {
+        grid-template-columns: 1fr;
+        gap: 1rem;
+    }
+
+    .metric-card {
+        min-height: auto;
+    }
+
+    .main-stat {
+        font-size: 2.5rem;
+    }
+}

@@ -12,66 +12,69 @@
         </div>
     </div>
 
-    <table class="policy-table">
-        <thead>
-            <tr>
-                <th>TYPE</th>
-                <th>EFF DATE</th>
-                <th>EXP DATE</th>
-                <th>STATUS</th>
-                <th>GROSS PREM</th>
-                <th>COMMISSION</th>
-                <th>TAXES</th>
-                <th>FEES</th>
-                <th>NET PREMIUM</th>
-                <th>RATE CHANGE</th>
-                <th>LOSS RATIO</th>
-                <th></th>
-            </tr>
-        </thead>
-        <tbody>
-            @for (row of rows; track row.id) {
-            <tr>
-                <td>
-                    <div class="pol-type-wrapper">
-                        <div class="pol-icon" [ngClass]="row.color" [innerHTML]="row.svg"></div>
-                        <div>
-                            <div>{{row.type}}</div>
-                            <div class="pol-sub">{{row.id}}</div>
+    <div class="table-scroll-wrapper">
+        <table class="policy-table">
+            <thead>
+                <tr>
+                    <th>TYPE</th>
+                    <th>EFF DATE</th>
+                    <th>EXP DATE</th>
+                    <th>STATUS</th>
+                    <th>GROSS PREM</th>
+                    <th>COMMISSION</th>
+                    <th>TAXES</th>
+                    <th>FEES</th>
+                    <th>NET PREMIUM</th>
+                    <th>RATE CHANGE</th>
+                    <th>LOSS RATIO</th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody>
+                @for (row of rows; track row.id) {
+                <tr>
+                    <td>
+                        <div class="pol-type-wrapper">
+                            <div class="pol-icon" [ngClass]="row.color" [innerHTML]="row.svg"></div>
+                            <div>
+                                <div>{{row.type}}</div>
+                                <div class="pol-sub">{{row.id}}</div>
+                            </div>
                         </div>
-                    </div>
-                </td>
-                <td>{{row.effDate}}</td>
-                <td>{{row.expDate}}</td>
-                <td><span class="status-pill {{row.status}}">{{row.status}}</span></td>
-                <td>{{row.gross}}</td>
-                <td>{{row.comm}}</td>
-                <td>{{row.taxes}}</td>
-                <td>{{row.fees}}</td>
-                <td>{{row.net}}</td>
-                <td [class.negative]="row.rateChange.startsWith('-')"
-                    [class.positive]="!row.rateChange.startsWith('-') && row.rateChange !== 'N/A'">{{row.rateChange}}
-                </td>
-                <td> <span class="loss-pill" [ngClass]="row.lossClass">{{row.loss}}</span> </td>
-                <td><i class="pi pi-ellipsis-h action-icon"></i></td>
-            </tr>
-            }
-        </tbody>
-        <tfoot>
-            <tr class="total-row">
-                <td>TOTAL (4)</td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td>$992,900</td>
-                <td>$1,020,010</td>
-                <td>$322,300</td>
-                <td>$1,137,600</td>
-                <td>$1,150,000</td>
-                <td>4.8%</td>
-                <td><span class="loss-pill yellow">18.5%</span></td>
-                <td></td>
-            </tr>
-        </tfoot>
-    </table>
+                    </td>
+                    <td>{{row.effDate}}</td>
+                    <td>{{row.expDate}}</td>
+                    <td><span class="status-pill {{row.status}}">{{row.status}}</span></td>
+                    <td>{{row.gross}}</td>
+                    <td>{{row.comm}}</td>
+                    <td>{{row.taxes}}</td>
+                    <td>{{row.fees}}</td>
+                    <td>{{row.net}}</td>
+                    <td [class.negative]="row.rateChange.startsWith('-')"
+                        [class.positive]="!row.rateChange.startsWith('-') && row.rateChange !== 'N/A'">
+                        {{row.rateChange}}
+                    </td>
+                    <td> <span class="loss-pill" [ngClass]="row.lossClass">{{row.loss}}</span> </td>
+                    <td><i class="pi pi-ellipsis-h action-icon"></i></td>
+                </tr>
+                }
+            </tbody>
+            <tfoot>
+                <tr class="total-row">
+                    <td>TOTAL (4)</td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td>$992,900</td>
+                    <td>$1,020,010</td>
+                    <td>$322,300</td>
+                    <td>$1,137,600</td>
+                    <td>$1,150,000</td>
+                    <td>4.8%</td>
+                    <td><span class="loss-pill yellow">18.5%</span></td>
+                    <td></td>
+                </tr>
+            </tfoot>
+        </table>
+    </div>
 </div>

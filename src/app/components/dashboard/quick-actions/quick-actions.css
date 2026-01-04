@@ -34,3 +34,11 @@ h3 {
 .btn-action:hover {
     background-color: var(--primary);
 }
+
+@media (max-width: 768px) {
+    .btn-action {
+        padding: 1rem;
+        font-size: 1rem;
+        min-height: 48px;
+    }
+}

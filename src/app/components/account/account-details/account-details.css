@@ -347,3 +347,70 @@
 .btn-apply:hover {
     opacity: 0.9;
 }
+
+@media (max-width: 768px) {
+    .details-container {
+        grid-template-columns: 1fr;
+        display: flex;
+        flex-direction: column;
+    }
+
+    .sidebar {
+        border-right: none;
+        border-bottom: 1px solid var(--white-05);
+        padding: 1rem;
+        width: 100%;
+    }
+
+    .content-area {
+        padding: 1rem;
+    }
+
+    .stats-row {
+        flex-direction: column;
+        gap: 1.5rem;
+    }
+
+    .stat-box {
+        width: 100%;
+    }
+
+    .factors-grid {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+    }
+
+    .ai-row {
+        flex-direction: column;
+        gap: 1rem;
+        align-items: stretch;
+    }
+
+    .btn-apply {
+        width: 100%;
+        padding: 0.75rem;
+        font-size: 1rem;
+        min-height: 44px;
+    }
+
+    .stat-label,
+    .item-head,
+    .ai-title,
+    .menu-label {
+        font-size: 1rem;
+    }
+
+    .ai-desc,
+    .submenu-item,
+    .pos-text {
+        font-size: 0.875rem;
+    }
+
+    .big-score {
+        font-size: 3rem;
+    }
+
+    .winnability-header h2 {
+        font-size: 1.75rem;
+    }
+}

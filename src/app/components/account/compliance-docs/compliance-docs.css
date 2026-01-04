@@ -59,3 +59,30 @@
 .doc-item.neutral i {
     color: var(--text-muted);
 }
+
+.doc-item svg {
+    width: 20px;
+    height: 20px;
+    flex-shrink: 0;
+}
+
+@media (max-width: 768px) {
+    .doc-grid {
+        grid-template-columns: 1fr;
+        gap: 1rem;
+    }
+
+    .doc-card {
+        height: auto;
+        padding: 1.25rem;
+    }
+
+    .header-row {
+        flex-direction: row;
+        align-items: center;
+    }
+
+    .section-title {
+        font-size: 1.1rem;
+    }
+}

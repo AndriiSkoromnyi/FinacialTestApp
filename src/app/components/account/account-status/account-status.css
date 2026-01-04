@@ -92,3 +92,51 @@
     background: var(--success);
     border-radius: 50%;
 }
+
+@media (max-width: 768px) {
+    .status-card {
+        flex-direction: column;
+        padding: 1.5rem;
+        gap: 0;
+        align-items: flex-start;
+    }
+
+    .stepper-track {
+        display: none;
+    }
+
+    .step {
+        width: 100%;
+        flex-direction: row;
+        align-items: flex-start;
+        gap: 1rem;
+        padding-bottom: 1.5rem;
+        position: relative;
+    }
+
+    .step:last-child {
+        padding-bottom: 0;
+    }
+
+    .step:not(:last-child)::after {
+        content: '';
+        position: absolute;
+        left: 11px;
+        top: 28px;
+        bottom: 4px;
+        width: 2px;
+        background: #334155;
+    }
+
+    .step-icon {
+        flex-shrink: 0;
+        z-index: 2;
+        position: relative;
+    }
+
+    .step-label {
+        font-size: 1rem;
+        text-align: left;
+        padding-top: 2px;
+        }
+}

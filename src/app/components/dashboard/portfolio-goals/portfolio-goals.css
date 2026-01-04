@@ -106,3 +106,14 @@ h3 {
 .overflow-visible {
     overflow: visible !important;
 }
+
+@media (max-width: 768px) {
+    .h-8 {
+        height: 2.5rem !important;
+    }
+
+    .goal-percent-label {
+        font-size: 0.875rem;
+        margin-top: 0.5rem;
+    }
+}

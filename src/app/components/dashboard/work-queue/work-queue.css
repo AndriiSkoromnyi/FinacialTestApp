@@ -126,3 +126,35 @@ tbody tr:last-child td {
 tbody tr:hover {
     background-color: var(--white-02);
 }
+
+@media (max-width: 768px) {
+    .tab-btn {
+        padding: 0.75rem 1.25rem;
+        font-size: 1rem;
+    }
+
+    .avatar-sm {
+        width: 40px;
+        height: 40px;
+        font-size: 0.875rem;
+        min-width: 40px;
+        min-height: 40px;
+    }
+
+    .status-dot {
+        width: 10px;
+        height: 10px;
+        min-width: 10px;
+        min-height: 10px;
+    }
+
+    tbody td {
+        padding: 1.5rem 0.75rem;
+        font-size: 1rem;
+    }
+
+    thead th {
+        font-size: 0.85rem;
+        padding: 1.25rem 0.75rem;
+    }
+}

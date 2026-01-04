@@ -97,5 +97,16 @@
 .policy-date {
     font-size: 0.7rem;
     color: var(--text-muted);
+
     margin-top: 2px;
+}
+
+@media (max-width: 768px) {
+    .policies-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .policy-card {
+        padding: 1.25rem;
+    }
 }

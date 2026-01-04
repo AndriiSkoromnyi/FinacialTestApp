@@ -1,3 +1,9 @@
+:host {
+    display: block;
+    position: relative;
+    z-index: 100;
+}
+
 .header-container {
     background-color: var(--bg-app);
     padding-top: var(--spacing-md);
@@ -21,7 +27,6 @@
 
 .search-input {
     background-color: var(--bg-input-focus);
-    /* Slightly lighter than bg-app */
     border: 1px solid var(--white-10);
     padding: 0.5rem 1rem;
     border-radius: var(--radius-full);
@@ -40,7 +45,6 @@
     height: 36px;
     border-radius: 50%;
     background-color: var(--bg-avatar);
-    /* Blueish grey */
     color: white;
     display: flex;
     align-items: center;
@@ -83,4 +87,68 @@
     display: flex;
     align-items: center;
     justify-content: center;
+}
+
+@media (max-width: 768px) {
+    :host {
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        width: 100%;
+        z-index: 1000;
+        box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
+    }
+
+    .header-container {
+        padding-top: 1rem;
+        padding-bottom: 0.5rem;
+    }
+
+    .top-bar {
+        flex-direction: column;
+        align-items: stretch;
+        gap: 1rem;
+        margin-bottom: 1rem;
+    }
+
+    .top-bar .flex {
+        width: 100%;
+    }
+
+    .welcome-text {
+        display: none;
+    }
+
+    .top-actions {
+        justify-content: center;
+        width: 100%;
+    }
+
+    .search-wrapper {
+        flex: 1;
+    }
+
+    .search-input {
+        width: 100%;
+        max-width: none;
+        padding: 0.75rem 1rem;
+        font-size: 1rem;
+        height: 44px;
+    }
+
+    .avatar-circle {
+        display: none;
+    }
+
+    .nav-item {
+        padding: 0.75rem 1.25rem;
+        font-size: 1rem;
+        flex-shrink: 0;
+    }
+
+    .main-nav .container {
+        padding-bottom: 0.5rem;
+        justify-content: flex-start;
+    }
 }
