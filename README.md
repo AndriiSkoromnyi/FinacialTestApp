@@ -32,6 +32,10 @@ This project implements a high-fidelity UI for a financial dashboard and an acco
 - **SVG**: Custom vector graphics for charts, icons, and visual elements.
 - **RxJS**: Reactive data handling via `MockDataService`.
 
+## 🤖 AI Tools & Workflow
+- **Figma AI**: Utilized for generating initial UI concepts, grid layouts, and visual hierarchy to accelerate the design process.
+- **Gemini 3**: Served as an advanced AI pair programmer for code generation, architectural decisions, and ensuring Angular best practices.
+
 
 ## 🌐 Deployment
 **Live Application**: https://finacial-test-app-vercel.vercel.app
