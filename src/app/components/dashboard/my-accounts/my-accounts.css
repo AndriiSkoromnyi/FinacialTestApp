@@ -270,7 +270,6 @@ tr.account-row td:last-child {
         margin-right: -1rem;
         padding-left: 1rem;
         padding-right: 1rem;
-        -webkit-overflow-scrolling: touch;
     }
 
     tr.account-row td {
@@ -302,5 +301,14 @@ tr.account-row td:last-child {
     .table-header th {
         font-size: 0.8rem;
         padding: 1rem 0.75rem;
+    }
+}
+
+@media (max-width: 1200px) {
+    .overflow-x-auto {
+        overflow-x: auto;
+        -webkit-overflow-scrolling: touch;
+        display: block;
+        width: 100%;
     }
 }
