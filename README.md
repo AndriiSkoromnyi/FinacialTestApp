@@ -1,59 +1,63 @@
-# FinTestFE
+# FinTestFE - Financial Dashboard Test Assignment
 
-This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 21.0.4.
+## 📌 Project Overview
+This project implements a high-fidelity UI for a financial dashboard and an account management screen using **Angular 21**. The solution focuses on component reuse, responsive design, and precise layout implementation based on the provided design specifications.
 
-## Development server
+## 📂 Implemented Features
 
-To start a local development server, run:
+### 1. Dashboard 
+- **Navigation Bar**: Responsive top navigation with sticky positioning and active tab states.
+- **Work Queue**: Interactive tabbed interface for task management with sortable table columns.
+- **Portfolio Goals**: Complex visual progress indicators including gradient bars/rounded markers.
+- **Quick Actions**: "C-Suite" style action buttons for rapid navigation.
+- **Market Intelligence**: Dynamic news feed with semantic severity indicators (High Impact, Warning, Info).
+- **My Accounts**: Data-rich table with status badges, color-coded triage scores, and winnability ratings.
 
-```bash
-ng serve
-```
+### 2. Account Page 
+- **Header**: Comprehensive account overview with key metadata.
+- **Performance Metrics**: Key Performance Indicators (KPIs) dashboard with target comparisons.
+- **Policies**: Detailed policy breakdown including premiums, renewal dates, and visual icons.
+- **Account Status**: Visual stepper component tracking account lifecycle and compliance.
+- **Winnability Analytics**: 
+  - Interactive "Decision Support" sidebar.
+  - SVG-based historical trend graphs with gradients.
+  - "Factors" analysis (Increasing vs Decreasing winnability).
+  - AI-Powered recommendation cards.
+- **Communication Hub**: Threaded message view with attachment indicators and quick actions.
 
-Once the server is running, open your browser and navigate to `http://localhost:4200/`. The application will automatically reload whenever you modify any of the source files.
+## ✅ Technologies Used
+- **Angular 21**: Modern standalone components, signals, and control flow syntax (`@for`, `@if`).
+- **TypeScript**: Strict typing for data models and services.
+- **CSS3 / Flexbox / Grid**: Pure CSS implementation for layouts (No heavy UI frameworks like Bootstrap).
+- **SVG**: Custom vector graphics for charts, icons, and visual elements.
+- **RxJS**: Reactive data handling via `MockDataService`.
 
-## Code scaffolding
 
-Angular CLI includes powerful code scaffolding tools. To generate a new component, run:
+## 🌐 Deployment
+**Live Application**: https://finacial-test-app-vercel.vercel.app
 
-```bash
-ng generate component component-name
-```
+## 🚀 Getting Started
 
-For a complete list of available schematics (such as `components`, `directives`, or `pipes`), run:
+### Prerequisites
+- Node.js (v18+ recommended)
+- Angular CLI
 
-```bash
-ng generate --help
-```
+### Installation
+1. Clone the repository:
+   ```bash
+   git clone [INSERT_REPO_URL]
+   ```
+2. Navigate to the project directory:
+   ```bash
+   cd FinTestFE
+   ```
+3. Install dependencies:
+   ```bash
+   npm install
+   ```
 
-## Building
+### Development server
+Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
 
-To build the project run:
-
-```bash
-ng build
-```
-
-This will compile your project and store the build artifacts in the `dist/` directory. By default, the production build optimizes your application for performance and speed.
-
-## Running unit tests
-
-To execute unit tests with the [Vitest](https://vitest.dev/) test runner, use the following command:
-
-```bash
-ng test
-```
-
-## Running end-to-end tests
-
-For end-to-end (e2e) testing, run:
-
-```bash
-ng e2e
-```
-
-Angular CLI does not come with an end-to-end testing framework by default. You can choose one that suits your needs.
-
-## Additional Resources
-
-For more information on using the Angular CLI, including detailed command references, visit the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
+### Build
+Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
