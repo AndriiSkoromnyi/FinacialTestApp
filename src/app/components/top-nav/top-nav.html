@@ -17,10 +17,7 @@
         <div class="container flex items-center gap-2 overflow-x-auto">
             @for (item of navItems; track item.label) {
             <a [routerLink]="item.route" routerLinkActive="active" class="nav-item flex items-center gap-2">
-                <svg class="nav-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                    stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                    <path [attr.d]="item.svg"></path>
-                </svg>
+                <span class="nav-icon-wrapper" [innerHTML]="item.svg"></span>
                 {{ item.label }}
             </a>
             }

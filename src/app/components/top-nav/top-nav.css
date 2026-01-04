@@ -79,6 +79,8 @@
     box-shadow: 0 4px 12px rgba(59, 130, 246, 0.3);
 }
 
-.nav-item.active .nav-icon {
-    stroke: white;
+.nav-icon-wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }

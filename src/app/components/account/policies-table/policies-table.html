@@ -33,9 +33,12 @@
             @for (row of rows; track row.id) {
             <tr>
                 <td>
-                    <div class="pol-type">
-                        <span class="dot" [ngClass]="row.color"></span> {{row.type}}
-                        <div class="pol-sub">{{row.id}}</div>
+                    <div class="pol-type-wrapper">
+                        <div class="pol-icon" [ngClass]="row.color" [innerHTML]="row.svg"></div>
+                        <div>
+                            <div>{{row.type}}</div>
+                            <div class="pol-sub">{{row.id}}</div>
+                        </div>
                     </div>
                 </td>
                 <td>{{row.effDate}}</td>
