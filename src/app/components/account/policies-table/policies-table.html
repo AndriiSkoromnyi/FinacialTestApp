@@ -30,7 +30,8 @@
             </tr>
         </thead>
         <tbody>
-            <tr *ngFor="let row of rows">
+            @for (row of rows; track row.id) {
+            <tr>
                 <td>
                     <div class="pol-type">
                         <span class="dot" [ngClass]="row.color"></span> {{row.type}}
@@ -51,6 +52,7 @@
                 <td> <span class="loss-pill" [ngClass]="row.lossClass">{{row.loss}}</span> </td>
                 <td><i class="pi pi-ellipsis-h action-icon"></i></td>
             </tr>
+            }
         </tbody>
         <tfoot>
             <tr class="total-row">

@@ -6,25 +6,23 @@
 .section-title {
     font-size: 1.2rem;
     margin-bottom: 1rem;
-    color: #fff;
+    color: var(--text-primary);
 }
 
 .status-card {
     background: rgba(30, 32, 45, 0.6);
-    border: 1px solid rgba(255, 255, 255, 0.05);
+    border: 1px solid var(--white-05);
     border-radius: 16px;
     padding: 2rem 3rem;
     display: flex;
     justify-content: space-between;
     position: relative;
-    /* Anti-gravity */
     box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
 }
 
 .stepper-track {
     position: absolute;
     top: 2.75rem;
-    /* center align with icon */
     left: 5.5rem;
     right: 5.5rem;
     height: 2px;
@@ -32,16 +30,14 @@
     z-index: 0;
 }
 
-/* Add green line for progress */
 .stepper-track::after {
     content: '';
     position: absolute;
     top: 0;
     left: 0;
     width: 80%;
-    /* Hardcoded for effect to match "Bind" */
     height: 100%;
-    background: #10b981;
+    background: var(--success);
 }
 
 .step {
@@ -69,30 +65,30 @@
 }
 
 .step.completed .step-icon {
-    background: #10b981;
-    border-color: #10b981;
+    background: var(--success);
+    border-color: var(--success);
 }
 
 .step.active .step-icon {
-    border-color: #10b981;
+    border-color: var(--success);
     background: #1e293b;
-    box-shadow: 0 0 0 4px rgba(16, 185, 129, 0.2);
+    box-shadow: 0 0 0 4px var(--success-alpha-20);
 }
 
 .step-label {
     font-size: 0.85rem;
-    color: #94a3b8;
+    color: var(--text-secondary);
 }
 
 .step.completed .step-label,
 .step.active .step-label {
-    color: #e2e8f0;
+    color: var(--text-primary-soft);
     font-weight: 500;
 }
 
 .active-dot {
     width: 8px;
     height: 8px;
-    background: #10b981;
+    background: var(--success);
     border-radius: 50%;
 }

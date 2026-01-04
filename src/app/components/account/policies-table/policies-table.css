@@ -2,18 +2,17 @@
     display: block;
     margin-top: 2rem;
     margin-bottom: 4rem;
-    /* Bottom padding for scroll */
 }
 
 .section-title {
     font-size: 1.2rem;
     margin-bottom: 1rem;
-    color: #fff;
+    color: var(--text-primary);
 }
 
 .table-container {
     background: rgba(30, 32, 45, 0.4);
-    border: 1px solid rgba(255, 255, 255, 0.05);
+    border: 1px solid var(--white-05);
     border-radius: 16px;
     padding: 1.5rem;
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
@@ -26,7 +25,7 @@
 }
 
 .search-input {
-    background: rgba(255, 255, 255, 0.05);
+    background: var(--white-05);
     border-radius: 8px;
     padding: 0.5rem 1rem;
     display: flex;
@@ -51,8 +50,8 @@
 
 .filter-btn {
     background: transparent;
-    border: 1px solid rgba(255, 255, 255, 0.1);
-    color: #94a3b8;
+    border: 1px solid var(--white-10);
+    color: var(--text-secondary);
     padding: 0.4rem 1rem;
     border-radius: 20px;
     cursor: pointer;
@@ -67,18 +66,18 @@
 
 th {
     text-align: left;
-    color: #64748b;
+    color: var(--text-muted);
     font-size: 0.7rem;
     text-transform: uppercase;
     padding: 1rem 0.5rem;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+    border-bottom: 1px solid var(--white-05);
 }
 
 td {
     padding: 1rem 0.5rem;
-    color: #e2e8f0;
+    color: var(--text-primary-soft);
     vertical-align: middle;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+    border-bottom: 1px solid var(--white-05);
 }
 
 .pol-type {
@@ -87,7 +86,6 @@ td {
     justify-content: center;
     position: relative;
     padding-left: 1rem;
-    /* Space for dot */
 }
 
 .dot {
@@ -100,11 +98,11 @@ td {
 }
 
 .dot.blue {
-    background: #3b82f6;
+    background: var(--primary-light);
 }
 
 .dot.green {
-    background: #10b981;
+    background: var(--success);
 }
 
 .dot.purple {
@@ -117,27 +115,26 @@ td {
 
 .pol-sub {
     font-size: 0.65rem;
-    color: #64748b;
+    color: var(--text-muted);
 }
 
 .status-pill {
     display: inline-block;
     font-size: 0.7rem;
     font-weight: 500;
-    /* Default Active */
-    color: #10b981;
+    color: var(--success);
 }
 
 .status-pill.Pending {
-    color: #f59e0b;
+    color: var(--warning);
 }
 
 .status-pill.Active {
-    color: #10b981;
+    color: var(--success);
 }
 
 .positive {
-    color: #10b981;
+    color: var(--success);
 }
 
 .negative {
@@ -152,26 +149,26 @@ td {
 }
 
 .loss-pill.green {
-    background: rgba(16, 185, 129, 0.2);
-    color: #10b981;
+    background: var(--success-alpha-20);
+    color: var(--success);
 }
 
 .loss-pill.yellow {
-    background: rgba(245, 158, 11, 0.2);
-    color: #f59e0b;
+    background: var(--warning-alpha-20);
+    color: var(--warning);
 }
 
 .loss-pill.red {
-    background: rgba(239, 68, 68, 0.2);
+    background: var(--danger-alpha-15);
     color: #f87171;
 }
 
 .loss-pill.gray {
-    color: #64748b;
+    color: var(--text-muted);
 }
 
 .action-icon {
-    color: #64748b;
+    color: var(--text-muted);
     cursor: pointer;
 }
 

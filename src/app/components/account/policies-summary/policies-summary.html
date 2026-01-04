@@ -1,6 +1,7 @@
 <h2 class="section-title">Policies</h2>
 <div class="policies-grid">
-    <div class="policy-card" *ngFor="let p of policies">
+    @for (p of policies; track p.name) {
+    <div class="policy-card">
         <div class="icon-circle" [ngClass]="p.colorClass" [innerHTML]="p.svg">
         </div>
         <div class="policy-info">
@@ -9,4 +10,5 @@
             <div class="policy-date">Eff Date: {{p.date}}</div>
         </div>
     </div>
+    }
 </div>

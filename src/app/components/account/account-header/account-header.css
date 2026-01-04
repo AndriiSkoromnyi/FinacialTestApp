@@ -9,7 +9,6 @@
     align-items: flex-start;
     padding: 1.5rem 0;
     position: relative;
-    /* Removed background/border as requested */
 }
 
 .header-content {
@@ -26,7 +25,7 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    border: 2px solid rgba(255, 255, 255, 0.2);
+    border: 2px solid var(--white-20);
     overflow: hidden;
 }
 
@@ -48,26 +47,26 @@
     gap: 1rem;
     align-items: center;
     font-size: 0.85rem;
-    color: #94a3b8;
+    color: var(--text-secondary);
 }
 
 .divider {
     width: 1px;
     height: 24px;
-    background: rgba(255, 255, 255, 0.1);
+    background: var(--white-10);
 }
 
 .label {
     display: block;
     font-size: 0.7rem;
     text-transform: uppercase;
-    color: #64748b;
+    color: var(--text-muted);
     margin-bottom: 2px;
     letter-spacing: 0.05em;
 }
 
 .value {
-    color: #e2e8f0;
+    color: var(--text-primary-soft);
     font-weight: 500;
 }
 
@@ -86,7 +85,7 @@
 }
 
 .alert-title {
-    color: #fbbf24;
+    color: var(--warning-text);
     font-weight: 600;
     margin-bottom: 0.5rem;
     font-size: 0.95rem;
@@ -104,18 +103,18 @@
 }
 
 .alert-item span:first-child {
-    color: #e2e8f0;
+    color: var(--text-primary-soft);
     margin-bottom: 2px;
 }
 
 .sub {
     font-size: 0.7rem;
-    color: #94a3b8;
+    color: var(--text-secondary);
     margin-bottom: 4px;
 }
 
 .alert-item a {
-    color: #3b82f6;
+    color: var(--primary-light);
     text-decoration: none;
     font-size: 0.75rem;
 }
