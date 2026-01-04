@@ -127,34 +127,73 @@ tbody tr:hover {
     background-color: var(--white-02);
 }
 
+.table-container {
+    overflow-x: auto;
+    width: 100%;
+    -webkit-overflow-scrolling: touch;
+}
+
 @media (max-width: 768px) {
+    .widget-header h2 {
+        font-size: 1.25rem;
+        margin-bottom: 1rem;
+    }
+
+    .tabs {
+        overflow-x: visible;
+        white-space: normal;
+        flex-wrap: wrap;
+        width: 100%;
+        margin-bottom: 1rem;
+        display: flex;
+        gap: 0.5rem;
+        padding-bottom: 0;
+    }
+
     .tab-btn {
-        padding: 0.75rem 1.25rem;
-        font-size: 1rem;
+        padding: 0.6rem 0.75rem;
+        font-size: 0.85rem;
+        margin-bottom: 0;
+        flex: 1 0 auto;
+        justify-content: center;
+        text-align: center;
     }
 
     .avatar-sm {
-        width: 40px;
-        height: 40px;
-        font-size: 0.875rem;
-        min-width: 40px;
-        min-height: 40px;
+        width: 36px;
+        height: 36px;
+        font-size: 0.8rem;
+        min-width: 36px;
+        min-height: 36px;
     }
 
     .status-dot {
-        width: 10px;
-        height: 10px;
-        min-width: 10px;
-        min-height: 10px;
+        width: 8px;
+        height: 8px;
+        min-width: 8px;
+        min-height: 8px;
+        margin-right: 8px;
     }
 
     tbody td {
-        padding: 1.5rem 0.75rem;
-        font-size: 1rem;
+        padding: 1rem 0.75rem;
+        font-size: 0.95rem;
+        line-height: 1.4;
     }
 
     thead th {
-        font-size: 0.85rem;
-        padding: 1.25rem 0.75rem;
+        font-size: 0.8rem;
+        padding: 1rem 0.75rem;
+    }
+
+    .table-container {
+        margin: 0 -0.5rem;
+        padding: 0 0.5rem;
+        width: calc(100% + 1rem);
+    }
+
+    .widget {
+        height: auto !important;
+        min-height: 400px;
     }
 }

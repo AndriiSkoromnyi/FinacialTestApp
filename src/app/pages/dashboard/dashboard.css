@@ -38,3 +38,26 @@
 .flex-1 {
     flex: 1;
 }
+
+@media (max-width: 1024px) {
+    .full-height {
+        height: auto !important;
+        min-height: 0;
+    }
+
+    .dashboard-widgets-wrapper {
+        display: flex;
+        flex-direction: column;
+        height: auto;
+    }
+
+    .dashboard-widgets-stack {
+        height: auto;
+    }
+
+    .dashboard-top-section {
+        display: flex;
+        flex-direction: column;
+        gap: 1.5rem;
+    }
+}
