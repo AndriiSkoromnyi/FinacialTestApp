@@ -1,8 +1,7 @@
 <h2 class="section-title">Policies</h2>
 <div class="policies-grid">
     <div class="policy-card" *ngFor="let p of policies">
-        <div class="icon-circle" [ngClass]="p.colorClass">
-            <i class="icon" [class]="p.icon"></i>
+        <div class="icon-circle" [ngClass]="p.colorClass" [innerHTML]="p.svg">
         </div>
         <div class="policy-info">
             <div class="policy-name">{{p.name}}</div>

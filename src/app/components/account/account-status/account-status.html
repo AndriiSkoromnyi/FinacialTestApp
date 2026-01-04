@@ -1,12 +1,25 @@
 <h2 class="section-title">Account Status</h2>
 <div class="status-card">
     <div class="stepper-track"></div>
-    <div class="step" *ngFor="let s of steps; let i = index" [class.active]="s.active" [class.completed]="s.completed">
+    @for (s of steps; track s.label) {
+    <div class="step" [class.active]="s.active" [class.completed]="s.completed">
         <div class="step-icon">
-            <span *ngIf="s.completed">✓</span>
-            <span *ngIf="!s.completed && !s.active" class="dot"></span>
-            <span *ngIf="s.active" class="active-dot"></span>
+            @if (s.completed) {
+            <span class="svg-icon">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none">
+                    <path d="M16.8 8.39999L9.64048 15.6L7.2 13.1457" stroke="white" stroke-width="3"
+                        stroke-linecap="round" stroke-linejoin="round" />
+                </svg>
+            </span>
+            }
+            @if (!s.completed && !s.active) {
+            <span class="dot"></span>
+            }
+            @if (s.active) {
+            <span class="active-dot"></span>
+            }
         </div>
         <div class="step-label">{{s.label}}</div>
     </div>
+    }
 </div>
